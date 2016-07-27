@@ -1,0 +1,51 @@
+.offlineButton{
+background-image: url("offline.png");
+width:16px;
+height:16px;
+}
+
+.onlineButton{
+background-image: url("online.png");
+width:16px;
+height:16px;
+}
+
+.twitchList_table{
+width:100%;
+border-width:1px; 
+border-style:solid; 
+border-color:#000000;
+background-color:#ffffff;
+}
+.twitchList_table th {
+border-width:1px; 
+ border-style:solid; 
+border-color:#000000;
+text-align: center;
+}
+.twitchList_table td {
+border-width:1px; 
+ border-style:solid; 
+border-color:#000000;
+ padding: 1px;
+ padding-left:5px;
+}
+.twitchList_table_all{
+width:50%;
+border-width:1px; 
+border-style:solid; 
+border-color:#000000;
+}
+.twitchList_table_all th {
+border-width:1px; 
+border-style:solid; 
+border-color:#000000;
+text-align: center;
+}
+.twitchList_table_all td {
+border-width:1px; 
+ border-style:solid; 
+border-color:#000000;
+ padding: 1px;
+ padding-left:5px;
+}
