@@ -9,7 +9,7 @@ class tlc_List{
 		}
 	
 	public function register_plugin_styles() {
-		wp_register_style( 'streamList', plugins_url( '/twitchListCustomize/css/tlc_style.css' ) );
+		wp_register_style( 'streamList', plugin_dir_url( __FILE__ ).'/css/tlc_style.css'  );
 		wp_enqueue_style( 'streamList' );
 	}
 
@@ -18,7 +18,10 @@ class tlc_List{
 		global $wpdb;
 		//Récupération des options
 		$OfflineSetting = get_option( 'tlc_show_offline' );
-		$nbStream = get_option( 'tlc_nb_stream' );
+		$nbStream = 10;
+		if(get_option( 'tlc_nb_stream' )){
+			$nbStream = get_option( 'tlc_nb_stream' );
+		}
 		$redirect = get_option( 'tlc_redirection_stream' );
 		$allStreamPage=get_option('tlc_page_allstream');
 		// Nouvelle instance de Twitch_API
