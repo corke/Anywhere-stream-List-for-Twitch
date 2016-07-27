@@ -4,7 +4,7 @@
 Plugin Name: AnywhereStreamList_forTwitch
 Description: Plugin allow you to make list of your stream Twitch TV you can put everywhere with shortcode.
 Author: Corke420
-Author URI: http://themeforest.net/user/corke77
+Author URI: https://github.com/corke420
 Version: 1.0
 */
 class tlc_Plugin{
