@@ -117,7 +117,11 @@ class tlc_Plugin{
 	}
 	//Option permettant de choisir le nombre de streams à afficher
 	public function nbStream_html(){
-		$html='<input type="number" name="tlc_nb_stream" value="'.get_option('tlc_nb_stream').'"/>';
+		if(get_option('tlc_nb_stream')){
+		$html='<input type="number" name="tlc_nb_stream" value="'.get_option('tlc_nb_stream').'"/>';		
+		}else{			
+		$html='<input type="number" name="tlc_nb_stream" value="10"/>';		
+		}
 		echo $html;
 	}
 	//Option permettant de choisir la page sur la quelle on désir afficher tous les streams
