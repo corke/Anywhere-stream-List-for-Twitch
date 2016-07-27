@@ -1,9 +1,10 @@
 <?php
 
 /*
-Plugin Name: Anywhere stream List for Twitch
+Plugin Name: AnywhereStreamList_forTwitch
 Description: Plugin allow you to make list of your stream Twitch TV you can put everywhere with shortcode.
 Author: Corke420
+Author URI: http://themeforest.net/user/corke77
 Version: 1.0
 */
 class tlc_Plugin{
@@ -28,7 +29,7 @@ class tlc_Plugin{
 	// create a scheduled event (if it does not exist already)
 	function __admin_schedule_cron() {
     if ( ! wp_next_scheduled( 'cron_twitch' ) ) {
-	  wp_schedule_event(time(), 'every5minutes', 'cron_twitch');
+	  wp_schedule_event(time(), 'everyminutes', 'cron_twitch');
 	}
 	}
 	function __do_cron_script() {
@@ -59,9 +60,9 @@ class tlc_Plugin{
 	// add custom interval
 	 function cron_add_minute( $schedules ) {
 		// Adds once every minute to the existing schedules.
-		$schedules['every5minutes'] = array(
-	    'interval' => 300,
-	    'display' => __( 'Once Every 5 Minutes' )
+		$schedules['everyminutes'] = array(
+	    'interval' => 60,
+	    'display' => __( 'Once Every  Minutes' )
 		);
 		return $schedules;
 	}
@@ -180,7 +181,7 @@ class tlc_Plugin{
 	}
 	//DEBUTSECTION
 	public function section_settings_html(){
-		echo 'Choose the settings for your plugin Anywhere stream List for Twitch</br>';
+		echo 'Choose the settings for your plugin AnywhereStreamList for Twitch</br>';
 	}	
 	public function section_mgr_html(){
 		echo 'Insert or delete Twitch streams : </br> You have to insert the name of the stream visible in the adress bar </br> Ex : "http://www.twitch.tv/corke420" you should pick "corke420"</br>';
@@ -196,7 +197,7 @@ class tlc_Plugin{
 	//||||||||||||||||||||||||||||||||||||||||||
 	public function menu_html(){
 		echo '<h1>'.get_admin_page_title().'</h1>';
-		echo '<h3>Anywhere stream List for Twitch : Dashboard</h3>';
+		echo '<h3>AnywhereStreamList_for Twitch : Dashboard</h3>';
 		echo '<p>ShortCode :<br> [tlc_list] Displays your personalized streams list<br>[tlc_list_all]Displays all streams</p>';
 		
 		//Formulaire d'ajout de streamer.
