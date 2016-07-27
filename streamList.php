@@ -131,7 +131,7 @@ class tlc_Plugin{
 		$listPages = $wpdb->get_results($sql);
 		$html='<select name="tlc_page_allstream" id="test" value="'.get_option('tlc_page_allstream').'">';
 		foreach($listPages as $page){
-			$html .= '<option>'.$page->post_title.'</option>';
+			$html .= '<option>'.$page->post_name.'</option>';
 		}
 		$html .= '</select> ';
 		$html .= '<label for="test">Select the display page of all your streams . (Remember to insert the shortcode [ tlc_list_all ] in it)</label>';
